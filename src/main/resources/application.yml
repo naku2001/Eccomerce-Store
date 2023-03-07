@@ -1,15 +1,15 @@
 server:
-  port: 8080
+  port: 8001
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/
-    username: postgres
-    password: example
+    url: jdbc:mysql://localhost:3306/shop
+    username: root
+    password: Perfect2001
 
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       show-sql: true
       format-sql: true
       type: info

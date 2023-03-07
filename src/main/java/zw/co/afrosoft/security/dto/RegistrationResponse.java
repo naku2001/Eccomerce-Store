@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import zw.co.afrosoft.model.User;
 
 @Getter
 @Setter
@@ -11,6 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class RegistrationResponse {
 
-	private String message;
+
+	private User user;
 
 }
