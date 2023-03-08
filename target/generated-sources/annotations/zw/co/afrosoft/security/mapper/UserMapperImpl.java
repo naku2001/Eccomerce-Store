@@ -58,6 +58,11 @@ public class UserMapperImpl implements UserMapper {
         AuthenticatedUserDto authenticatedUserDto = new AuthenticatedUserDto();
 
         authenticatedUserDto.setName( user.getName() );
+        authenticatedUserDto.setLastname(user.getLastname());
+        authenticatedUserDto.setUserType(user.getUserType());
+        authenticatedUserDto.setEmail(user.getEmail());
+        authenticatedUserDto.setCustomer(user.getCustomer());
+        authenticatedUserDto.setRestaurantUser(user.getRestaurant());
         authenticatedUserDto.setUsername( user.getUsername() );
         authenticatedUserDto.setPassword( user.getPassword() );
         authenticatedUserDto.setUserRole( user.getUserRole() );
