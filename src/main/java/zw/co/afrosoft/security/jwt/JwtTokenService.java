@@ -5,12 +5,12 @@ import zw.co.afrosoft.security.dto.AuthenticatedUserDto;
 import zw.co.afrosoft.security.dto.LoginRequest;
 import zw.co.afrosoft.security.dto.LoginResponse;
 import zw.co.afrosoft.security.mapper.UserMapper;
-import zw.co.afrosoft.security.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
+import zw.co.afrosoft.service.UserService;
 
 @Slf4j
 @Service

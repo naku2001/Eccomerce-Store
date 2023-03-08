@@ -1,7 +1,5 @@
-package zw.co.afrosoft.security.service;
+package zw.co.afrosoft.service;
 
-import zw.co.afrosoft.model.UserRole;
-import zw.co.afrosoft.security.dto.AuthenticatedUserDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,6 +8,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import zw.co.afrosoft.model.UserRole;
+import zw.co.afrosoft.security.dto.AuthenticatedUserDto;
 
 import java.util.Collections;
 import java.util.Objects;

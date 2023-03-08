@@ -1,5 +1,6 @@
 package zw.co.afrosoft.security.service;
 
+import org.springframework.http.ResponseEntity;
 import zw.co.afrosoft.model.*;
 import zw.co.afrosoft.repository.CustomerRepo;
 import zw.co.afrosoft.repository.RestaurantRepo;
@@ -9,6 +10,7 @@ import zw.co.afrosoft.security.dto.RegistrationRequest;
 import zw.co.afrosoft.security.dto.RegistrationResponse;
 import zw.co.afrosoft.security.mapper.UserMapper;
 //import zw.co.afrosoft.service.UserValidationService;
+import zw.co.afrosoft.service.UserService;
 import zw.co.afrosoft.utils.GeneralMessageAccessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -48,24 +50,18 @@ public class UserServiceImpl implements UserService {
 			restaurant.setEmail(registrationRequest.getEmail());
 			restaurant.setPassword(registrationRequest.getPassword());
 			restaurant.setUsername(registrationRequest.getUsername());
-			restaurant.setLastname(restaurant.getLastname());
-			restaurant.setName(restaurant.getName());
+			restaurant.setLastname(registrationRequest.getLastname());
+			restaurant.setName(registrationRequest.getName());
 			Restaurant saved =  restaurantRepo.save(restaurant);
-			final User user = UserMapper.INSTANCE.convertToUser(registrationRequest);
-			user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-			user.setUserRole(UserRole.ADMIN);
-			user.setUserType(UserType.Restaurant);
-			user.setRestaurant(saved);
-
-
-			userRepository.save(user);
-
+			final User users = UserMapper.INSTANCE.convertToUser(saved);
+			users.setPassword(bCryptPasswordEncoder.encode(users.getPassword()));
+			users.setUserRole(UserRole.ADMIN);
+			users.setUserType(UserType.Restaurant);
+			users.setRestaurant(saved);
+			userRepository.save(users);
 			final String username = registrationRequest.getUsername();
-			final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
-
 			log.info("{} registered successfully!", username);
-
-			return new RegistrationResponse(user);
+			return new RegistrationResponse(users);
 		}
 		Customer customer = new Customer();
 
@@ -74,20 +70,16 @@ public class UserServiceImpl implements UserService {
 		customer.setUsername(registrationRequest.getUsername());
 		customer.setName(registrationRequest.getName());
 		customer.setLastname(registrationRequest.getLastname());
-		Customer SavedCustomer = customerRepo.save(customer);
+		Customer save= customerRepo.save(customer);
 
 
-		final User user = UserMapper.INSTANCE.convertToUser(registrationRequest);
+		final User user = UserMapper.INSTANCE.convertToUser(save);
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setUserRole(UserRole.USER);
 		user.setUserType(UserType.Customer);
-		user.setCustomer(SavedCustomer);
-
-
+		user.setCustomer(save);
 		userRepository.save(user);
-
 		final String username = registrationRequest.getUsername();
-		final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
 
 		log.info("{} registered successfully!", username);
 
@@ -100,5 +92,10 @@ public class UserServiceImpl implements UserService {
 		final User user = findByUsername(username);
 
 		return UserMapper.INSTANCE.convertToAuthenticatedUserDto(user);
+	}
+
+	@Override
+	public ResponseEntity findAll() {
+		return null;
 	}
 }

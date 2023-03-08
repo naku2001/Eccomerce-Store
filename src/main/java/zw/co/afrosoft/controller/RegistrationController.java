@@ -2,11 +2,11 @@ package zw.co.afrosoft.controller;
 
 import zw.co.afrosoft.security.dto.RegistrationRequest;
 import zw.co.afrosoft.security.dto.RegistrationResponse;
-import zw.co.afrosoft.security.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import zw.co.afrosoft.service.UserService;
 
 import javax.validation.Valid;
 @CrossOrigin

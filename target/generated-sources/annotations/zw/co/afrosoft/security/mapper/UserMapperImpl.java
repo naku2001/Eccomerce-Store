@@ -1,14 +1,16 @@
 package zw.co.afrosoft.security.mapper;
 
 import javax.annotation.processing.Generated;
+import zw.co.afrosoft.model.Customer;
+import zw.co.afrosoft.model.Restaurant;
 import zw.co.afrosoft.model.User;
 import zw.co.afrosoft.security.dto.AuthenticatedUserDto;
 import zw.co.afrosoft.security.dto.RegistrationRequest;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-07T16:01:48+0200",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
+    date = "2023-03-08T11:55:41+0200",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.5 (Amazon.com Inc.)"
 )
 public class UserMapperImpl implements UserMapper {
 
@@ -21,9 +23,28 @@ public class UserMapperImpl implements UserMapper {
         User.UserBuilder user = User.builder();
 
         user.name( registrationRequest.getName() );
+        user.lastname( registrationRequest.getLastname() );
         user.username( registrationRequest.getUsername() );
         user.password( registrationRequest.getPassword() );
         user.email( registrationRequest.getEmail() );
+
+        return user.build();
+    }
+
+    @Override
+    public User convertToUser(Restaurant restaurant) {
+        if ( restaurant == null ) {
+            return null;
+        }
+
+        User.UserBuilder user = User.builder();
+
+        user.id( restaurant.getId() );
+        user.name( restaurant.getName() );
+        user.lastname( restaurant.getLastname() );
+        user.username( restaurant.getUsername() );
+        user.password( restaurant.getPassword() );
+        user.email( restaurant.getEmail() );
 
         return user.build();
     }
@@ -56,6 +77,24 @@ public class UserMapperImpl implements UserMapper {
         user.username( authenticatedUserDto.getUsername() );
         user.password( authenticatedUserDto.getPassword() );
         user.userRole( authenticatedUserDto.getUserRole() );
+
+        return user.build();
+    }
+
+    @Override
+    public User convertToUser(Customer customer) {
+        if ( customer == null ) {
+            return null;
+        }
+
+        User.UserBuilder user = User.builder();
+
+        user.id( customer.getId() );
+        user.name( customer.getName() );
+        user.lastname( customer.getLastname() );
+        user.username( customer.getUsername() );
+        user.password( customer.getPassword() );
+        user.email( customer.getEmail() );
 
         return user.build();
     }
