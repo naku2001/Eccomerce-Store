@@ -11,6 +11,6 @@ import zw.co.afrosoft.model.User;
 public class LoginResponse {
 
 	private String token;
-	private User user;
+	private User  user;
 
 }

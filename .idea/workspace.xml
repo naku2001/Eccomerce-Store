@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52f39b2c-5bb8-4b72-8701-f10cb1a5a7b2" name="Changes" comment="" />
+    <list default="true" id="52f39b2c-5bb8-4b72-8701-f10cb1a5a7b2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/dto/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/jwt/JwtTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/jwt/JwtTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/zw/co/afrosoft/security/jwt/JwtTokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/zw/co/afrosoft/security/jwt/JwtTokenService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +101,8 @@
       <updated>1678194108069</updated>
       <workItem from="1678194156344" duration="6683000" />
       <workItem from="1678257409003" duration="4620000" />
-      <workItem from="1678267494948" duration="10010000" />
+      <workItem from="1678267494948" duration="10243000" />
+      <workItem from="1678281648262" duration="2000000" />
     </task>
     <task id="LOCAL-00001" summary="git me">
       <created>1678200521768</created>
@@ -133,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678280715794</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="returning user datails logged in">
+      <created>1678281386018</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678281386018</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,17 +213,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/jwt/JwtTokenService.java</url>
-          <line>36</line>
+          <line>40</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/jwt/JwtTokenService.java</url>
-          <line>30</line>
+          <line>32</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/zw/co/afrosoft/security/jwt/JwtTokenService.java</url>
-          <line>32</line>
+          <line>34</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>

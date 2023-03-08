@@ -13,6 +13,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.stereotype.Service;
 import zw.co.afrosoft.service.UserService;
 
+import java.util.Optional;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -34,17 +36,15 @@ public class JwtTokenService {
 
 		authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
-		final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
+		User user = userRepository.findByUsername(username);
 
-		final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
-
+//		final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
+//final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
 
 		final String token = jwtTokenManager.generateToken(user);
 
-
 		log.info("{} has successfully logged in!", user.getUsername());
-
-		return new LoginResponse(token,user);
+		return new LoginResponse(token, user);
 	}
 
 }
