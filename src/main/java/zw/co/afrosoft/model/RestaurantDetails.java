@@ -17,7 +17,7 @@ public class RestaurantDetails {
     @NotEmpty(message = "{address_should_not_be_not_empty}")
     private String address;
     @NotEmpty(message = "{restaurantId_should_not_be_empty}")
-    private Long restaurantId;
+    private Long restaurantUserId;
     @NotEmpty(message = "{contact_details_should_not_be_empty}")
     private String contactDetails;
 

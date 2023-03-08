@@ -18,7 +18,7 @@ public class RestaurantInfo {
     private String name;
     private String logoUrl;
     @OneToOne
-    private Restaurant restaurant;
+    private Restaurant restaurantUser;
     private String address;
     private String contactDetails;
 }

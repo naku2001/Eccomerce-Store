@@ -22,5 +22,5 @@ public class Dish {
     private double price;
     private String imageUrl;
     @ManyToOne
-    private Restaurant restaurant;
+    private RestaurantInfo restaurant;
 }

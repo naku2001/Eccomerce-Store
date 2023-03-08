@@ -17,31 +17,18 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
 
-    @PostMapping("/create-menu")
-    ResponseEntity addDish(@RequestBody MenuRequest request,Long id){
-        return restaurantService.addDish(request,id);
 
-    }
     @PostMapping("/create-restaurant")
     ResponseEntity createRestaurant(@RequestBody RestaurantDetails request){
         return restaurantService.createRestaurant(request);
     }
-    @DeleteMapping("/delete-dish/{id}")
-    ResponseEntity delete(@PathVariable Long id){
-        return restaurantService.delete(id);
-    }
+
     @GetMapping("/get-Allrestaurants")
     ResponseEntity getAll(){
         return restaurantService.getAll();
     }
-    @GetMapping("/get-menu")
-    ResponseEntity getAllDishes(){
-        return restaurantService. getAllDishes();
-    }
-    @GetMapping("/get-dish/{id}")
-    ResponseEntity getDish(@PathVariable Long id){
-        return restaurantService.getDish(id);
-    }
+
+
     @GetMapping("/get-restaurant/{id}")
     ResponseEntity getRestaurant(@PathVariable Long id){
         return restaurantService.getRestaurant(id);

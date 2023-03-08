@@ -74,6 +74,11 @@ public class UserMapperImpl implements UserMapper {
         User.UserBuilder user = User.builder();
 
         user.name( authenticatedUserDto.getName() );
+        user.lastname(authenticatedUserDto.getLastname());
+        user.userType(authenticatedUserDto.getUserType());
+        user.customer(authenticatedUserDto.getCustomer());
+        user.restaurant(authenticatedUserDto.getRestaurantUser());
+        user.email(authenticatedUserDto.getEmail());
         user.username( authenticatedUserDto.getUsername() );
         user.password( authenticatedUserDto.getPassword() );
         user.userRole( authenticatedUserDto.getUserRole() );

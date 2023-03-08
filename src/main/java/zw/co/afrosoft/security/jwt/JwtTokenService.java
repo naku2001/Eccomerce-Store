@@ -1,6 +1,7 @@
 package zw.co.afrosoft.security.jwt;
 
 import zw.co.afrosoft.model.User;
+import zw.co.afrosoft.repository.UserRepository;
 import zw.co.afrosoft.security.dto.AuthenticatedUserDto;
 import zw.co.afrosoft.security.dto.LoginRequest;
 import zw.co.afrosoft.security.dto.LoginResponse;
@@ -16,6 +17,7 @@ import zw.co.afrosoft.service.UserService;
 @Service
 @RequiredArgsConstructor
 public class JwtTokenService {
+	private final UserRepository userRepository;
 
 	private final UserService userService;
 
@@ -35,7 +37,10 @@ public class JwtTokenService {
 		final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
 
 		final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
+
+
 		final String token = jwtTokenManager.generateToken(user);
+
 
 		log.info("{} has successfully logged in!", user.getUsername());
 
